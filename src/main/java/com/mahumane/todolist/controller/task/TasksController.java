@@ -6,6 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
+<<<<<<< HEAD
+=======
+import org.springframework.web.bind.annotation.CrossOrigin;
+>>>>>>> master
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +27,10 @@ import com.mahumane.todolist.service.TasksService;
 import jakarta.validation.Valid;
 
 @RestController
+<<<<<<< HEAD
+=======
+@CrossOrigin(origins = "*")
+>>>>>>> master
 @RequestMapping("task")
 public class TasksController {
 

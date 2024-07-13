@@ -1,8 +1,12 @@
 package com.mahumane.todolist.model;
 
+<<<<<<< HEAD
 import java.time.Instant;
 
 import org.hibernate.annotations.CreationTimestamp;
+=======
+
+>>>>>>> master
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,15 +24,26 @@ public class TaskModel {
 
     private String content_task;
 
+<<<<<<< HEAD
     @CreationTimestamp
     private Instant create_dateTime;
+=======
+    private String create_dateTime;
+>>>>>>> master
 
     private String end_dateTime;
 
     private Boolean checkTask;
+<<<<<<< HEAD
     private Long user_id;
 
     public TaskModel(Long task_id, String content_task, Instant create_dateTime, String end_dateTime, Boolean checkTask,
+=======
+    
+    private Long user_id;
+
+    public TaskModel(Long task_id, String content_task, String create_dateTime, String end_dateTime, Boolean checkTask,
+>>>>>>> master
             Long user_id) {
         this.task_id = task_id;
         this.content_task = content_task;
@@ -37,6 +52,10 @@ public class TaskModel {
         this.checkTask = checkTask;
         this.user_id = user_id;
     }
+<<<<<<< HEAD
+=======
+    
+>>>>>>> master
     public TaskModel() {
     }
     public Long getTask_id() {
@@ -51,10 +70,17 @@ public class TaskModel {
     public void setContent_task(String content_task) {
         this.content_task = content_task;
     }
+<<<<<<< HEAD
     public Instant getCreate_dateTime() {
         return create_dateTime;
     }
     public void setCreate_dateTime(Instant create_dateTime) {
+=======
+    public 	String getCreate_dateTime() {
+        return create_dateTime;
+    }
+    public void setCreate_dateTime(String create_dateTime) {
+>>>>>>> master
         this.create_dateTime = create_dateTime;
     }
     public String getEnd_dateTime() {

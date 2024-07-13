@@ -1,6 +1,10 @@
 package com.mahumane.todolist.service;
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -16,7 +20,11 @@ import com.mahumane.todolist.dto.TasksDto;
 import com.mahumane.todolist.model.TaskModel;
 import com.mahumane.todolist.repository.TaskRepository;
 import com.mahumane.todolist.repository.UsersRepository;
+<<<<<<< HEAD
 
+=======
+import com.mahumane.todolist.utils.DateTimeUtils;
+>>>>>>> master
 
 import jakarta.transaction.Transactional;
 
@@ -35,6 +43,13 @@ public class TasksService {
     @Autowired
     private HistoricService historicService;
 
+<<<<<<< HEAD
+=======
+    
+
+    
+    
+>>>>>>> master
     public ResponseEntity<Page<TaskModel>> selectTasks(String username, int page, int size) {
         var user = usersRepository.findByUsername(username);
         var getUserId = user.get().getUser_id();
@@ -46,8 +61,13 @@ public class TasksService {
     public ResponseEntity<?> insertTask(String username,TasksDto dto) {
        var user = usersRepository.findByUsername(username);
        TaskModel taskModel = new TaskModel();
+<<<<<<< HEAD
        taskModel.setContent_task(dto.content_task());
        taskModel.setEnd_dateTime(dto.end_dateTime());
+=======
+       taskModel.setCreate_dateTime(DateTimeUtils.getDateTime());
+       taskModel.setContent_task(dto.content_task());
+>>>>>>> master
        taskModel.setUser_id(user.get().getUser_id());
        taskModel.setCheckTask(false);
        return new ResponseEntity<>(action.save(taskModel),HttpStatus.CREATED);
@@ -55,7 +75,12 @@ public class TasksService {
 
     @Transactional
     public ResponseEntity<?> updateTask(Long id, TasksDto dto) {
+<<<<<<< HEAD
                                 
+=======
+                             
+    	
+>>>>>>> master
         Optional<TaskModel> task = action.findById(id);
         
 
@@ -64,6 +89,7 @@ public class TasksService {
         }
 
         TaskModel taskModel = task.get();
+<<<<<<< HEAD
 
         taskModel.setContent_task(dto.content_task());
 
@@ -73,6 +99,20 @@ public class TasksService {
 
         if(dto.checkTask() != null){
             taskModel.setCheckTask(dto.checkTask());
+=======
+        
+        if(dto.content_task() != null) {
+        	taskModel.setContent_task(dto.content_task());
+        }
+
+        if(dto.checkTask() == true){
+            taskModel.setCheckTask(dto.checkTask());
+            taskModel.setEnd_dateTime(DateTimeUtils.getDateTime());
+        }
+        if(dto.checkTask() == false){
+        	taskModel.setCheckTask(dto.checkTask());
+        	taskModel.setEnd_dateTime(null);
+>>>>>>> master
         }
         
         return ResponseEntity.ok(action.save(taskModel));

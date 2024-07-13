@@ -1,8 +1,11 @@
 package com.mahumane.todolist.model;
 
+<<<<<<< HEAD
 import java.time.Instant;
 
 import org.hibernate.annotations.CreationTimestamp;
+=======
+>>>>>>> master
 
 
 import jakarta.persistence.Entity;
@@ -23,6 +26,7 @@ public class HistoricModel {
     
     private String content_task;
 
+<<<<<<< HEAD
     private Instant create_dateTime;
 
     private String end_dateTime;
@@ -31,12 +35,24 @@ public class HistoricModel {
     private Instant historic_create_Time;
 
 
+=======
+    private String create_dateTime;
+
+    private String end_dateTime;
+
+    private String historic_create_Time;
+>>>>>>> master
 
     public HistoricModel() {
     }
 
+<<<<<<< HEAD
     public HistoricModel(Long historic_id, Long user_id, String content_task, Instant create_dateTime,
             String end_dateTime, Instant historic_create_Time) {
+=======
+    public HistoricModel(Long historic_id, Long user_id, String content_task, String create_dateTime,
+            String end_dateTime, String historic_create_Time) {
+>>>>>>> master
         this.historic_id = historic_id;
         this.user_id = user_id;
         this.content_task = content_task;
@@ -45,6 +61,10 @@ public class HistoricModel {
         this.historic_create_Time = historic_create_Time;
     }
 
+<<<<<<< HEAD
+=======
+    
+>>>>>>> master
     public Long getHistoric_id() {
         return historic_id;
     }
@@ -69,11 +89,19 @@ public class HistoricModel {
         this.content_task = content_task;
     }
 
+<<<<<<< HEAD
     public Instant getCreate_dateTime() {
         return create_dateTime;
     }
 
     public void setCreate_dateTime(Instant create_dateTime) {
+=======
+    public String getCreate_dateTime() {
+        return create_dateTime;
+    }
+
+    public void setCreate_dateTime(String create_dateTime) {
+>>>>>>> master
         this.create_dateTime = create_dateTime;
     }
 
@@ -85,6 +113,7 @@ public class HistoricModel {
         this.end_dateTime = end_dateTime;
     }
 
+<<<<<<< HEAD
     public Instant getHistoric_create_Time() {
         return historic_create_Time;
     }
@@ -96,5 +125,15 @@ public class HistoricModel {
 
 
     
+=======
+    public String getHistoric_create_Time() {
+        return historic_create_Time;
+    }
+
+    public void setHistoric_create_Time(String historic_create_Time) {
+        this.historic_create_Time = historic_create_Time;
+    }
+
+>>>>>>> master
     
 }
