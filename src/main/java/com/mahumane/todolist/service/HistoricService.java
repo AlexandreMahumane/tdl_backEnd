@@ -14,10 +14,7 @@ import com.mahumane.todolist.model.HistoricModel;
 import com.mahumane.todolist.model.TaskModel;
 import com.mahumane.todolist.repository.HistoricRepository;
 import com.mahumane.todolist.repository.UsersRepository;
-<<<<<<< HEAD
-=======
 import com.mahumane.todolist.utils.DateTimeUtils;
->>>>>>> master
 
 @Service
 public class HistoricService {
@@ -33,10 +30,7 @@ public class HistoricService {
         historicModel.setCreate_dateTime(taskModel.getCreate_dateTime());
         historicModel.setEnd_dateTime(taskModel.getEnd_dateTime());
         historicModel.setUser_id(taskModel.getUser_id());
-<<<<<<< HEAD
-=======
         historicModel.setHistoric_create_Time(DateTimeUtils.getDateTime());
->>>>>>> master
         return new ResponseEntity<>(action.save(historicModel), HttpStatus.CREATED);
     }
 
